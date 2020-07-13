@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 WORKDIR /app
-COPY package.json .
-RUN yarn install
 COPY . .
-RUN yarn build
+RUN npm install
+EXPOSE 4050
+CMD ["npm", "start"]

@@ -1,15 +1,21 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import routes from './src/routes/crmRoutes';
+const express = require('express') ;
+const mongoose  = require('mongoose') ;
+const bodyParser =require('body-parser') ;
+const routes =require('./src/routes/userRoutes') ;
 
 const app = express();
-const PORT = 4000;
+const PORT = 4050;
 
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://roort:root@cluster0.wlor8.mongodb.net/root?retryWrites=true&w=majority', {
-    useMongoClient: true
+
+mongoose.connect('mongodb+srv://roort:root@cluster0.wlor8.mongodb.net/devopsdb?retryWrites=true&w=majority', {
+    useNewUrlParser: true
+}).then(() => {
+  console.log("mongo connecte ");
+}).catch(err => {
+    console.log('Erreur mongo non connecte', err);
+    process.exit();
 });
 
 // bodyparser setup
