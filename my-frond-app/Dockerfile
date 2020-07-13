@@ -4,7 +4,7 @@ FROM node:latest
 ENV NODE_ENV production
 
 # set working directory
-WORKDIR /app
+WORKDIR /app/frondend
 
 # add /app/node_modules/.bin to $PATH
 ENV PATH /app/node_modules/.bin:$PATH

@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 
-WORKDIR /app
+WORKDIR /app/backend
 
 # add /app/node_modules/.bin to $PATH
 ENV PATH /app/node_modules/.bin:$PATH

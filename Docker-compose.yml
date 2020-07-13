@@ -3,7 +3,7 @@ services:
   api:
     build:
       dockerfile: Dockerfile
-      context: ./my-back-end
+      context: ./my-back-app
     ports:
       - "4050:4050"
     volumes:
@@ -12,7 +12,7 @@ services:
   client:
     build:
       dockerfile: Dockerfile
-      context: ./my-frond-end
+      context: ./my-frond-app
     ports:
       - "5050:5050"
     volumes:
