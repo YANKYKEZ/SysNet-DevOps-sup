@@ -2,19 +2,21 @@ version: '3'
 services:
   api:
     build:
-      dockerfile: Dockerfile.dev
-      context: ./server
+      dockerfile: Dockerfile
+      context: ./my-back-end
+    ports:
+      - "4050:4050"
     volumes:
-      - /app/node_modules
-      - //f/docker/projects/complex/server:/app
+      - ./my-back-app:/app/backend
+      - /app/backend/node_modules
   client:
     build:
-      dockerfile: Dockerfile.dev
-      context: ./client
+      dockerfile: Dockerfile
+      context: ./my-frond-end
     ports:
-      - "3000:3000"
+      - "5050:5050"
     volumes:
-      - /app/node_modules
-      - //f/docker/projects/complex/client:/app
+      - ./my-frond-app:/app/frondend
+      - /app/frondend/node_modules
 
   
